@@ -1,48 +1,52 @@
-(
-    sensitivity: 1.0,
-    smoothing: 15,
+Settings(
     event_dispatcher: (
-        Toggle_Key: Grave,
-        Excluded_Keys: [
-            J,
-            L,
+        Toggle_Key: Grave, // Key above TAB and below ESC
+        Excluded_Keys: [   // Unblock specific key because interception
+		    J,
+			L,
             LeftAlt,
             LeftShift,
             Tab,
         ],
     ),
+	
     event_handler: (
-        sensitivity: 1.0,
-        parachute_sensitivity: inf,
+        // How much mouse sensitivity, set in decimal value. Keep value low as possible, use your Mouse DPI for better sensitivity without increasing input latency
+        Sensitivity: 1.0, // (0.1 - 5.0)
+
+        // How smooth the mouse movement is:
+        //     Low  -> Low Input Latency, but camera movement will be jittering or not smooth
+        //     High -> Camera movement is smoother and more accurate, but increases Input Latency
+        Mouse_Smoothing_Level: 15,
+	
+        // Keybind Configuration
         binds: {
-            Keyboard(F1): Button(LeftThumb),
-            Keyboard(Num1): Button(DpadLeft),
-            Mouse(Button4): Button(RightThumb),
-            Mouse(Left): Button(RightTrigger),
-            Keyboard(Num2): Button(DpadRight),
-            Keyboard(I): Button(DpadLeft),
-            Keyboard(Esc): Button(Start),
-            Keyboard(M): Button(Back),
-            Keyboard(F): Button(X),
-            Keyboard(K): Button(Guide),
-            Mouse(Right): Button(LeftTrigger),
-            Keyboard(R): Button(X),
-            Mouse(Middle): Button(Y),
-            Keyboard(LeftControl): Button(B),
-            Keyboard(F2): Button(RightThumb),
-            Keyboard(Num3): Button(DpadDown),
-            Keyboard(B): Button(DpadLeft),
-            Keyboard(E): Button(RightShoulder),
-            Mouse(Button5): Button(DpadUp),
-            Keyboard(V): Button(RightThumb),
-            Keyboard(Space): Button(A),
             Keyboard(LeftAlt): Button(DpadUp),
+            Keyboard(Num3): Button(DpadDown),			
+            Keyboard(B): Button(DpadLeft),
+            Keyboard(I): Button(DpadLeft),
+            Keyboard(Num1): Button(DpadLeft),			
+            Keyboard(Num2): Button(DpadRight),
+
+            Keyboard(Space): Button(A),
+            Keyboard(R): Button(X),
+            Keyboard(F): Button(X),
+            Keyboard(LeftControl): Button(B),
             Keyboard(Q): Button(LeftShoulder),
+	        Keyboard(E): Button(RightShoulder),
+	        Keyboard(F1): Button(LeftThumb),		
+	        Keyboard(F2): Button(RightThumb),
+	        Keyboard(V): Button(RightThumb),				
+	        Keyboard(Esc): Button(Start),
+            Keyboard(M): Button(Back),
+            Keyboard(K): Button(Guide),			
             Keyboard(G): Button(Y),
+			
+			Mouse(Left): Button(RightTrigger),
+	        Mouse(Right): Button(LeftTrigger),
+			Mouse(Button5): Button(DpadUp),
+            Mouse(Button4): Button(RightThumb),
+            Mouse(Middle): Button(Y),
         },
-        mouse_smoothing_level: 15,
-        aim_assist_enabled: false,
-        aim_assist_intensity: 0.02,
-        analog_shake_enabled: true,
-    ),
+    )
 )
